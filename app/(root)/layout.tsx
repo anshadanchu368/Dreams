@@ -1,4 +1,4 @@
-import Navbar from "../components/Navbar";
+import Navbar from "../api/auth/Navbar";
 
 export default function Layout({children}: Readonly<{ children: React.ReactNode}>){
     return (
