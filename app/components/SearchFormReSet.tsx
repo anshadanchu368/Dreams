@@ -1,23 +1,22 @@
 "use client"
 
-import Link from "next/link";
-
-
 const SearchFormReSet = () => {
-
     const reset = () => {
         const form = document.querySelector('form') as HTMLFormElement;
-
-        if(form) form.reset();
+        if(form) {
+            form.reset();
+     
+            window.location.href = '/';
+        }
     };
 
-  return (
-    <div>
-        <button type="reset" onClick={reset}>
-                <Link href="/" className=" text-black">X</Link>
+    return (
+        <div>
+            <button type="button" onClick={reset} className="text-black">
+                X
             </button>
-    </div>
-  )
-}
+        </div>
+    );
+};
 
 export default SearchFormReSet

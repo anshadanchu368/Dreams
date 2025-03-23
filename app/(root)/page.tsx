@@ -1,6 +1,9 @@
 import SearchForm from "../components/SearchForm";
 
-export default function Home() {
+export default async function Home({ searchParams}: {
+  searchParams:Promise<{query?:string}>
+}) {
+  const query= (await searchParams).query;
   return (
    <>
    <section className="flex flex-col items-center bg-pink-100 py-5">
@@ -8,7 +11,7 @@ export default function Home() {
 
     <p className="text-black-100 text-md !max-w-3xl font-sans my-2">Pitch Your Ideas And Get funded By India's Top investors</p>
 
-    <SearchForm/>
+    <SearchForm query={query}/>
 
    </section>
    </>
